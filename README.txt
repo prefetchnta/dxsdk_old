@@ -1,9 +1,9 @@
 ===============================================================================
-°æDXSDK10°ø     Game SDK 1.0
-°æDXSDK20°ø     DirectX SDK 2.0
-°æDXSDK30°ø     DirectX SDK 3.0
-°æGAMEAPI12°ø   Game API for WinCE 1.2
-°æWINGSDK10°ø   WinG SDK 1.0 setup disk
+„ÄêDXSDK10„Äë     Game SDK 1.0
+„ÄêDXSDK20„Äë     DirectX SDK 2.0
+„ÄêDXSDK30„Äë     DirectX SDK 3.0
+„ÄêGAMEAPI12„Äë   Game API for WinCE 1.2
+„ÄêWINGSDK10„Äë   WinG SDK 1.0 setup disk
 ===============================================================================
 96D8C9F26C1E40536D18792A2B63A77C + 59FF8107: DXSDK10\AUTORUN.INF
 E2F24C7C696184332D0F0764E3B856CB + 8230F0A0: DXSDK10\GAMESDK.INF
