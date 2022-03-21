@@ -1,0 +1,80 @@
+*************************
+*** DirectSound Notes ***
+*************************
+
+Last updated  April 20, 1995
+
+============================
+= Limitations for Beta 1 ===
+============================
+- the 3D sound APIs aren't supported
+The following APIs are supported for this Beta:
+
+DIRECTSOUNDBUFFER methods:
+    GetCaps
+    SetCurrentPosition
+
+DIRECTSOUND methods:
+    ChangePlayingSpeed
+    EnumModes
+    EnumSoundBuffers
+    FreeAllBuffers
+    GetCaps
+    GetCPULimit
+    GetExclusiveMode
+    GetMode
+    GetVersion
+    GetSpeakerConfig
+    SetCPULimit
+    SetExclusiveMode
+    SetMode
+    SetSpeakerConfig
+
+===================================
+=== Known Issues/Bugs in Beta 1 ===
+===================================
+- the SB16 driver can sometimes lock up when DirectSound first starts playing
+after a reboot.   If this happens, just shut your machine off, and restart
+it to reset the state of the SB16 card.
+
+- an active wave file playing prevents creation of DirectSound object.   
+This typically manifests itself when you have some sound scheme that causes 
+sounds to be played all the time.  If sounds are playing when you try to 
+connect to DirectSound, DirectSoundCreate will fail.
+
+- Only one application can be connected to DirectSound at one time.
+
+
+==================================
+=== To Program for DirectSound ===
+==================================
+   Your app must be a 32 bit application.
+
+   Create a DSound object with
+        DirectSoundCreate. Parameters can be NULL and 0 for now.
+        This will return a direct sound object. (DS)
+   Create a primary buffer
+        Use the CreateSoundBuffer method of the DS object.
+        Specify the flags for LOOPING and PRIMARY
+        This will return a direct sound buffer object. DSB
+   Start the primary buffer playing
+        Use the Play method of the DSB object.
+        First parameter is the byte position to start playing. Set this to 0.
+        Second parameter is flags. (LOOPING flag)
+   Create secondary buffers.
+        Use the CreateSoundBuffer method of the DS object.
+        This will return a direct sound buffer object. DSB
+   Load the secondary buffers with data.
+        Use the Lock method of the DSB to obtain a pointer to the data area.
+        Use the Unlock method of the DSB to set the data to the device.
+   Play the secondary buffers.
+        Use the Play method of the DSB object.
+        First parameter is the byte position to start playing.
+        Second parameter is flags. (LOOPING flag)
+
+   Stop all buffers.
+        Use the Stop method of the DSB object.
+   Release the secondary buffers
+   Release the primary buffer.
+   Release the DSound object.
+   

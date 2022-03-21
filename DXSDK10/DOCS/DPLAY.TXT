@@ -1,0 +1,89 @@
+*************************
+*** DirectPlay Notes ***
+*************************
+
+Last updated  April 20, 1995
+
+=============================================
+= Network requirements for using DirectPlay =
+=============================================
+
+To use this implementation of DirectPlay, ensure that
+the TCP/IP protocol is installed on your machine.
+This can be checked in the Network section of Control
+Panel: TCP/IP should be listed as an installed network
+component under the Configuration property sheet.  If not,
+select Add, select to add a protocol, select Microsoft
+as the manufacturer and finally choose TCP/IP as the
+protocol to add.
+
+
+========================================================
+= Notes for connecting using DirectPlay user interface =
+========================================================
+
+In this implementation of DirectPlay, one player invites a number
+of other players who have selected to wait to be invited.
+
+On the call to Open(), DirectPlay displays a dialog.  The player
+may either check the check box to indicate that they want to be invited,
+or enter a list of other machines to contact. (one player enters 
+the list, all the rest of the players will check that they want to be
+invited)
+
+To add to the list of other machines to contact, type either the machine name or the
+IP address of the machine into the edit box, and hit Add.  If a 
+name resolution services are available, the machine name will
+be accepted, otherwise enter the IP address of the machine and hit Add.
+
+When the inviting player hits OK, the inviting machine attempts
+to contact the other machines for a period of time.  As other players
+are contacted, they join the game world.
+
+============================
+= Limitations for Beta 1 ===
+============================
+
+Currently the following functions are unsupported:
+
+EnumPlayers
+GetCaps
+Reply
+
+EnumPreviousSessions : returns DPERR_NOSESSIONS
+
+The DPOPEN_OPENSPECIFICSESSION flag is unsupported.
+
+Send and Receive do not currently support guaranteed delivery
+messages, all messages are sent TRYONCEFIRST and at equal priority.
+
+Receive does not support DPRECEIVE_TOPLAYER.
+
+DPSYSMSG_GAMEINFO is unsupported.
+
+QueryInterface will always return a pointer to the IDirectPlay
+interface.
+
+DirectPlay does not support use from multiple threads.
+
+DirectPlay does not currently support multi-homed TCP/IP
+hosts, i.e. machines with more than one IP address, which
+typically results from having more than one interface card
+that TCP/IP is bound to.  This may result when a "dial-up
+networking adapter" is installed as well as a normal network
+card.  If this is the case, disable one of the TCP/IP
+bindings by entering the Network section of Control Panel,
+and selecting the card for which the binding is to be
+disabled (e.g. the dial-up adapter).  Choose Properties,
+and select the Bindings property sheet.  Uncheck the check box
+which specifies the TCP/IP binding.
+
+
+Note :
+------
+The current encoding of system messages and non-system messages
+via the first byte of the message is liable to change in a later
+release.  Code should be written to localize this distinction.
+
+
+

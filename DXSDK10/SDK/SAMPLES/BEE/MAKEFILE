@@ -1,0 +1,372 @@
+# Microsoft Visual C++ Generated NMAKE File, Format Version 2.00
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (x86) Application" 0x0101
+
+!IF "$(CFG)" == ""
+CFG=Win32 Debug
+!MESSAGE No configuration specified.  Defaulting to Win32 Debug.
+!ENDIF 
+
+!IF "$(CFG)" != "Win32 Debug" && "$(CFG)" != "Win32 Release"
+!MESSAGE Invalid configuration "$(CFG)" specified.
+!MESSAGE You can specify a configuration when running NMAKE on this makefile
+!MESSAGE by defining the macro CFG on the command line.  For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "bee.mak" CFG="Win32 Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "Win32 Debug" (based on "Win32 (x86) Application")
+!MESSAGE "Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE 
+!ERROR An invalid configuration is specified.
+!ENDIF 
+
+################################################################################
+# Begin Project
+# PROP Target_Last_Scanned "Win32 Debug"
+MTL=MkTypLib.exe
+CPP=cl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "WinDebug"
+# PROP BASE Intermediate_Dir "WinDebug"
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "WinDebug"
+# PROP Intermediate_Dir "WinDebug"
+OUTDIR=.\WinDebug
+INTDIR=.\WinDebug
+
+ALL : .\WinDebug\bee.exe .\WinDebug\bee.bsc
+
+$(OUTDIR) : 
+    if not exist $(OUTDIR)/nul mkdir $(OUTDIR)
+
+# ADD BASE CPP /nologo /MD /W3 /GX /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+# ADD CPP /nologo /MD /W3 /GX /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+CPP_PROJ=/nologo /MD /W3 /GX /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D\
+ "_MBCS" /D "_AFXDLL" /FR$(INTDIR)/ /Fp$(OUTDIR)/"bee.pch" /Yu"stdafx.h"\
+ /I "..\..\inc" /Fo$(INTDIR)/ /Fd$(OUTDIR)/"bee.pdb" /c 
+CPP_OBJS=.\WinDebug/
+# ADD BASE RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x409 /d "_DEBUG" /d "_AFXDLL"
+RSC_PROJ=/l 0x409 /fo$(INTDIR)/"bee.res" /d "_DEBUG" /d "_AFXDLL" 
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+BSC32_FLAGS=/nologo /o$(OUTDIR)/"bee.bsc" 
+BSC32_SBRS= \
+    .\WinDebug\stdafx.sbr \
+    .\WinDebug\bee.sbr \
+    .\WinDebug\beedlg.sbr \
+    .\WinDebug\pe.sbr \
+    .\WinDebug\dddib.sbr \
+    .\WinDebug\animate.sbr \
+    .\WinDebug\wav.sbr
+
+.\WinDebug\bee.bsc : $(OUTDIR)  $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
+LINK32=link.exe
+# ADD BASE LINK32 /NOLOGO /SUBSYSTEM:windows /DEBUG /MACHINE:I386
+# SUBTRACT BASE LINK32 /PDB:none
+# ADD LINK32 winmm.lib /NOLOGO /SUBSYSTEM:windows /DEBUG /MACHINE:I386
+# SUBTRACT LINK32 /PDB:none
+LINK32_FLAGS=winmm.lib /NOLOGO /SUBSYSTEM:windows /INCREMENTAL:yes\
+ /PDB:$(OUTDIR)/"bee.pdb" /DEBUG /MACHINE:I386 /OUT:$(OUTDIR)/"bee.exe" 
+DEF_FILE=
+LINK32_OBJS= \
+    .\WinDebug\stdafx.obj \
+    .\WinDebug\bee.obj \
+    .\WinDebug\beedlg.obj \
+    .\WinDebug\bee.res \
+    .\WinDebug\pe.obj \
+    .\WinDebug\dddib.obj \
+    .\WinDebug\animate.obj \
+    .\WinDebug\wav.obj
+
+.\WinDebug\bee.exe : $(OUTDIR)  $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+# PROP BASE Use_MFC 6
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "WinRel"
+# PROP BASE Intermediate_Dir "WinRel"
+# PROP Use_MFC 6
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "WinRel"
+# PROP Intermediate_Dir "WinRel"
+OUTDIR=.\WinRel
+INTDIR=.\WinRel
+
+ALL : .\WinRel\bee.exe .\WinRel\bee.bsc
+
+$(OUTDIR) : 
+    if not exist $(OUTDIR)/nul mkdir $(OUTDIR)
+
+# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+# ADD CPP /nologo /MD /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "_AFXDLL" /FR /Yu"stdafx.h" /c
+CPP_PROJ=/nologo /MD /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D\
+ "_MBCS" /D "_AFXDLL" /FR$(INTDIR)/ /Fp$(OUTDIR)/"bee.pch" /Yu"stdafx.h"\
+ /I "..\..\inc" /Fo$(INTDIR)/ /c 
+CPP_OBJS=.\WinRel/
+# ADD BASE RSC /l 0x409 /d "NDEBUG" /d "_AFXDLL"
+# ADD RSC /l 0x409 /d "NDEBUG" /d "_AFXDLL"
+RSC_PROJ=/l 0x409 /fo$(INTDIR)/"bee.res" /d "NDEBUG" /d "_AFXDLL" 
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+BSC32_FLAGS=/nologo /o$(OUTDIR)/"bee.bsc" 
+BSC32_SBRS= \
+    .\WinRel\stdafx.sbr \
+    .\WinRel\bee.sbr \
+    .\WinRel\beedlg.sbr \
+    .\WinRel\pe.sbr \
+    .\WinRel\dddib.sbr \
+    .\WinRel\animate.sbr \
+    .\WinRel\wav.sbr
+
+.\WinRel\bee.bsc : $(OUTDIR)  $(BSC32_SBRS)
+    $(BSC32) @<<
+  $(BSC32_FLAGS) $(BSC32_SBRS)
+<<
+
+LINK32=link.exe
+# ADD BASE LINK32 /NOLOGO /SUBSYSTEM:windows /MACHINE:I386
+# SUBTRACT BASE LINK32 /PDB:none
+# ADD LINK32 /NOLOGO /SUBSYSTEM:windows /MACHINE:I386
+# SUBTRACT LINK32 /PDB:none
+LINK32_FLAGS=/NOLOGO /SUBSYSTEM:windows /INCREMENTAL:no\
+ /PDB:$(OUTDIR)/"bee.pdb" /MACHINE:I386 /OUT:$(OUTDIR)/"bee.exe" 
+DEF_FILE=
+LINK32_OBJS= \
+    .\WinRel\stdafx.obj \
+    .\WinRel\bee.obj \
+    .\WinRel\beedlg.obj \
+    .\WinRel\bee.res \
+    .\WinRel\pe.obj \
+    .\WinRel\dddib.obj \
+    .\WinRel\animate.obj \
+    .\WinRel\wav.obj
+
+.\WinRel\bee.exe : $(OUTDIR)  $(DEF_FILE) $(LINK32_OBJS)
+    $(LINK32) @<<
+  $(LINK32_FLAGS) $(LINK32_OBJS)
+<<
+
+!ENDIF 
+
+MTL_PROJ=
+
+.c{$(CPP_OBJS)}.obj:
+   $(CPP) $(CPP_PROJ) $<  
+
+.cpp{$(CPP_OBJS)}.obj:
+   $(CPP) $(CPP_PROJ) $<  
+
+.cxx{$(CPP_OBJS)}.obj:
+   $(CPP) $(CPP_PROJ) $<  
+
+################################################################################
+# Begin Group "Source Files"
+
+################################################################################
+# Begin Source File
+
+SOURCE=.\stdafx.cpp
+DEP_STDAF=\
+    .\stdafx.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+# ADD BASE CPP /Yc"stdafx.h"
+# ADD CPP /Yc"stdafx.h"
+
+.\WinDebug\stdafx.obj :  $(SOURCE)  $(DEP_STDAF) $(INTDIR)
+   $(CPP) /nologo /MD /W3 /GX /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D\
+ "_MBCS" /D "_AFXDLL" /FR$(INTDIR)/ /Fp$(OUTDIR)/"bee.pch" /Yc"stdafx.h"\
+ /Fo$(INTDIR)/ /Fd$(OUTDIR)/"bee.pdb" /c  $(SOURCE) 
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+# ADD BASE CPP /Yc"stdafx.h"
+# ADD CPP /Yc"stdafx.h"
+
+.\WinRel\stdafx.obj :  $(SOURCE)  $(DEP_STDAF) $(INTDIR)
+   $(CPP) /nologo /MD /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D\
+ "_MBCS" /D "_AFXDLL" /FR$(INTDIR)/ /Fp$(OUTDIR)/"bee.pch" /Yc"stdafx.h"\
+ /Fo$(INTDIR)/ /c  $(SOURCE) 
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\bee.cpp
+DEP_BEE_C=\
+    .\stdafx.h\
+    .\bee.h\
+    .\beedlg.h\
+    .\animate.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\bee.obj :  $(SOURCE)  $(DEP_BEE_C) $(INTDIR) .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\bee.obj :  $(SOURCE)  $(DEP_BEE_C) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\beedlg.cpp
+DEP_BEEDL=\
+    .\stdafx.h\
+    .\bee.h\
+    .\beedlg.h\
+    .\animate.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\beedlg.obj :  $(SOURCE)  $(DEP_BEEDL) $(INTDIR)\
+ .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\beedlg.obj :  $(SOURCE)  $(DEP_BEEDL) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\bee.rc
+DEP_BEE_R=\
+    .\res\bee.ico\
+    .\res\bee.rc2
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\bee.res :  $(SOURCE)  $(DEP_BEE_R) $(INTDIR)
+   $(RSC) $(RSC_PROJ)  $(SOURCE) 
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\bee.res :  $(SOURCE)  $(DEP_BEE_R) $(INTDIR)
+   $(RSC) $(RSC_PROJ)  $(SOURCE) 
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\readme.txt
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\pe.cpp
+DEP_PE_CP=\
+    .\stdafx.h\
+    .\pe.h\
+    ..\..\inc\ddraw.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\pe.obj :  $(SOURCE)  $(DEP_PE_CP) $(INTDIR) .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\pe.obj :  $(SOURCE)  $(DEP_PE_CP) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\dddib.cpp
+DEP_DDDIB=\
+    .\stdafx.h\
+    .\dddib.h\
+    ..\..\inc\ddraw.h\
+    .\pe.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\dddib.obj :  $(SOURCE)  $(DEP_DDDIB) $(INTDIR) .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\dddib.obj :  $(SOURCE)  $(DEP_DDDIB) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\animate.cpp
+DEP_ANIMA=\
+    .\stdafx.h\
+    ..\..\inc\ddraw.h\
+    .\animate.h\
+    .\dddib.h\
+    .\wav.h\
+    .\pe.h\
+    ..\..\inc\dsound.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\animate.obj :  $(SOURCE)  $(DEP_ANIMA) $(INTDIR)\
+ .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\animate.obj :  $(SOURCE)  $(DEP_ANIMA) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+################################################################################
+# Begin Source File
+
+SOURCE=.\wav.cpp
+DEP_WAV_C=\
+    .\stdafx.h\
+    .\wav.h\
+    ..\..\inc\dsound.h
+
+!IF  "$(CFG)" == "Win32 Debug"
+
+.\WinDebug\wav.obj :  $(SOURCE)  $(DEP_WAV_C) $(INTDIR) .\WinDebug\stdafx.obj
+
+!ELSEIF  "$(CFG)" == "Win32 Release"
+
+.\WinRel\wav.obj :  $(SOURCE)  $(DEP_WAV_C) $(INTDIR) .\WinRel\stdafx.obj
+
+!ENDIF 
+
+# End Source File
+# End Group
+# End Project
+################################################################################

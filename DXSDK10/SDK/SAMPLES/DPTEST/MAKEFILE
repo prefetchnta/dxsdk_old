@@ -1,0 +1,7 @@
+all: debug
+
+debug : 
+    nmake /f dptest.mak
+    
+retail : 
+    nmake /f dptest.mak  CFG="Win32 Release"

@@ -1,0 +1,429 @@
+//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\dptest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "#include ""afxres.rc""  \011// Standard components\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\dptest.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&GameID"
+    BEGIN
+        MENUITEM "&Default GUID",               ID_GAMEID_DEFAULTGUID
+        MENUITEM "&Alternate GUID",             ID_GAMEID_ALTERNATEGUID
+    END
+    POPUP "&Test"
+    BEGIN
+        MENUITEM "DirectPlayE&numerate",        ID_TEST_DIRECTPLAYENUMERATE
+        MENUITEM "&CreateObject",               ID_TEST_CREATEOBJECT
+        MENUITEM "&Open",                       ID_TEST_INITIALISE
+        MENUITEM "Create&Player",               ID_TEST_NEWENTITY
+        MENUITEM "&GetNames",                   ID_TEST_GETNAMES
+        MENUITEM "&Send",                       ID_TEST_SEND
+        MENUITEM "&Receive",                    ID_TEST_BEGINRECEIVE
+        MENUITEM "&DestroyPlayer",              ID_TEST_DESTROYPLAYER
+        MENUITEM "C&lose",                      ID_TEST_SHUTDOWN
+        MENUITEM "Rel&ease (object)",           ID_TEST_RELEASE
+        MENUITEM SEPARATOR
+        MENUITEM "&Abort CreatePlayer loop",    ID_TEST_ABORT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About DPTest...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About dptest"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,18,20
+    LTEXT           "DPTest Version 1.0",IDC_STATIC,40,10,119,8
+    LTEXT           "Copyright \251 1995",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,176,6,32,14,WS_GROUP
+END
+
+IDD_NEW_ENT DIALOG DISCARDABLE  0, 0, 237, 69
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "New Entity"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_FULLNAME,11,20,154,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NICKNAME,10,52,154,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,181,34,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,181,50,50,14
+    LTEXT           "Full Name:",IDC_STATIC,11,10,51,8
+    LTEXT           "Nick Name:",IDC_STATIC,10,40,41,8
+END
+
+IDD_GET_ENT_INF DIALOG DISCARDABLE  0, 0, 214, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Get Names"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_PLAYERID,51,8,48,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Get Info",IDC_GETINFO,155,8,50,14
+    PUSHBUTTON      "&Close",IDOK,156,33,50,14
+    LTEXT           "Formal name:",IDC_STATIC,7,50,52,8
+    LTEXT           "___________________",IDC_FULLNAME,7,64,155,8
+    LTEXT           "Friendly name:",IDC_STATIC,7,81,46,8
+    LTEXT           "___________________",IDC_NICKNAME,7,97,152,8
+    LTEXT           "Player ID:",IDC_STATIC,7,9,34,8
+END
+
+IDD_SEND DIALOG DISCARDABLE  0, 0, 229, 136
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Send message"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_PLAYERID_FROM,103,2,40,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PLAYERID_TO,103,17,40,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NUMSENDS,103,32,40,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MESSAGE,3,59,220,20,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    WS_VSCROLL
+    CONTROL         "DPSEND_BLOCKING",IDC_DPSEND_BLOCKING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,3,93,98,10
+    CONTROL         "DPSEND_GUARANTEE",IDC_DPSEND_GUARANTEE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,3,107,98,10
+    CONTROL         "DPSEND_HIGHPRIORITY",IDC_DPSEND_HIGHPRIORITY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,3,121,98,10
+    CONTROL         "DPSEND_REPLYREQUESTED",IDC_DPSEND_REPLYREQUESTED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,111,94,110,10
+    CONTROL         "DPSEND_TRYONCE",IDC_DPSEND_TRYONCE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,107,110,10
+    CONTROL         "&All permutations",IDC_ALLPERMUTES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,111,121,110,10
+    DEFPUSHBUTTON   "OK",IDOK,172,4,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,172,22,50,14
+    LTEXT           "to playerID:",IDC_STATIC,59,19,39,8
+    LTEXT           "Message (%d in message will be replaced by message count)",
+                    IDC_STATIC,3,48,205,8
+    LTEXT           "Send message from player ID:",IDC_STATIC,3,3,99,8
+    LTEXT           "Flags:",IDC_STATIC,3,81,30,8
+    RTEXT           "No. times to send:",IDC_STATIC,13,35,82,8
+END
+
+IDD_RECVDLG DIALOG DISCARDABLE  0, 0, 219, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Receive"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "DPRECEIVE_HIGHPRIORITY",IDC_DPRECEIVE_HIGHPRIORITY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,18,139,10
+    CONTROL         "DPRECEIVE_NORMAL",IDC_DPRECEIVE_NORMAL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,32,139,10
+    CONTROL         "DPRECEIVE_PEEK",IDC_DPRECEIVE_PEEK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,46,106,10
+    CONTROL         "DPRECEIVE_TOPLAYER",IDC_DPRECEIVE_TOPLAYER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,60,121,10
+    CONTROL         "DPRECEIVE_TRYONCEFIRST",IDC_DPRECEIVE_TRYONCEFIRST,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,74,139,10
+    CONTROL         "&All permutations",IDC_ALLPERMUTES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,87,139,10
+    CONTROL         "Short 2-char buffer",IDC_SHORTBUFF,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,141,62,75,10
+    DEFPUSHBUTTON   "OK",IDOK,163,5,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,163,22,50,14
+    LTEXT           "Flags:",IDC_STATIC,11,5,30,8
+END
+
+IDD_DESTROYPLAYER DIALOG DISCARDABLE  0, 0, 185, 43
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "DestroyPlayer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT2,10,19,56,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,14
+    LTEXT           "Player to destroy:",IDC_STATIC,9,6,59,8
+END
+
+IDD_OPENDLG DIALOG DISCARDABLE  0, 0, 185, 48
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Open"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NUMPLAYERS,7,20,67,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,23,50,14
+    LTEXT           "Max number players:",IDC_STATIC,7,9,68,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Microsoft\0"
+            VALUE "FileDescription", "DPTEST Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "DPTEST\0"
+            VALUE "LegalCopyright", "Copyright \251 1995\0"
+            VALUE "OriginalFilename", "DPTEST.EXE\0"
+            VALUE "ProductName", "Direct Play Test  Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "DirectPlay Test App\n\nDPtest\n\n\nDPtest.Document\nDPtest Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "dptest"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TEST_NEWENTITY       "\n"
+    ID_TEST_SEND            "\n"
+    ID_TEST_INITIALISE      "\n"
+    ID_TEST_SHUTDOWN        "\n"
+    ID_TEST_GETNAMES        "\n"
+    ID_TEST_OPENCHANNEL     "\n"
+    ID_TEST_BEGINRECEIVE    "\n"
+    ID_TEST_ABORT           "\n"
+    ID_TEST_CREATEOBJECT    "\n"
+    ID_TEST_DESTROYPLAYER   "\n"
+    ID_TEST_DIRECTPLAYENUMERATE "\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TEST_RELEASE         "\n"
+    ID_GAMEID_DEFAULTGUID   "\n"
+    ID_GAMEID_ALTERNATEGUID "\n"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\dptest.rc2"  // non-Microsoft Visual C++ edited resources
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+#include "afxres.rc"    // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+

@@ -1,0 +1,2 @@
+#include "rcids.h"
+FOX_ICON               ICON    DISCARDABLE     "fox.ico"

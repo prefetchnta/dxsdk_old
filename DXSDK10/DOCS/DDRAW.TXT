@@ -1,0 +1,66 @@
+*************************
+*** DirectDraw Notes ***
+*************************
+
+Last updated  April 20, 1995
+
+============================
+= Limitations for Beta 1 ===
+============================
+
+Some limitations exist for the first beta.   Some of the API's will return
+the error DDERR_UNSUPPORTED, others have reduced functionality.
+
+Palettes
+--------
+If the application has not done a SetExclusiveModeOwner, SetPaletteEntries 
+will not work on the first 10/last 10 palette entries due to issues with the 
+M8 build of Win95. Everything works fine if SetExclusiveModeOwner
+is used (this also gives you faster access to the palettes, and is the 
+preferred way for full screen games to operate).
+
+Attachments
+-----------
+Manipulation of complex surfaces via the attachment APIs is unsupported in 
+Beta 1.
+
+    AddAttachedSurface
+    DeleteAttachedSurfaces
+
+Overlays 
+--------
+Unsupported in Beta 1.
+
+    UpdateOverlay
+    GetOverlayPosition
+    GetOverlayZOrder
+    SetOverlayPosition
+    InsertOverlayZOrder
+    SetOverlayZOrder
+
+Composition Order
+-----------------
+Unsupported in Beta 1.
+
+    AddSurfaceDependency
+    Compose
+    DeleteSurfaceDependency
+    DestLock
+    DestUnlock
+    EnumSurfaceDependencies
+    GetCompositionOrder
+    SetCompositionOrder
+    SetSurfaceDependency
+
+Misc
+----
+EnumSurfaces will only enumerate existing surfaces in beta 1, it 
+will not enumerate what surfaces can be created.
+    
+ClipLists, primarily for overlays, aren't supported in beta 1.
+
+GetDC/ReleaseDC are unsupported in Beta 1
+
+===================================
+=== Known Issues/Bugs in Beta 1 ===
+===================================
